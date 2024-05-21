@@ -1,4 +1,14 @@
 {
+  "name": "er5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon connection.js.",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
