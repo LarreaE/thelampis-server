@@ -22,9 +22,14 @@ app.get('/',(req,res) => {
     res.send('Hello LAMP!')
 })
 
-app.get('/getFrases', async (req,res) => {
+app.get('/getScores', async (req,res) => {
 
-    const query = 'SELECT * FROM public.frases;'
+    const query = 'SELECT * FROM public.scores;'
     const result = await db.query(query)
     res.send(result.rows)
 })
+
+app.listen(port, () => {
+    console.log(`La app mp is listening on port ${port}`);
+})
+
