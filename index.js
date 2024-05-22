@@ -29,6 +29,19 @@ app.get('/getScores', async (req,res) => {
     res.send(result.rows)
 })
 
+app.post('/postScores', async(req,res) => {
+
+    const nameReg = req.body.name
+    const scoreReg = req.body.score
+    const query = "INSERT INTO scores (name ,score) VALUES ( '" + nameReg + "' , '" + scoreReg + "')"
+    console.log(query);
+    db.query(
+        query,
+        (err, result) => {
+            console.log(err);
+    });
+});
+
 app.listen(port, () => {
     console.log(`La app mp is listening on port ${port}`);
 })
